@@ -1,0 +1,8 @@
+{
+  "name": "nox",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "19547daf"
+}

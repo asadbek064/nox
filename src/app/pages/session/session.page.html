@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nox</ion-title>
+    <ion-buttons slot="secondary">
+        <ion-badge class="connectionsStatus" *ngIf="(isConnected | async) === false" color="danger">Connected</ion-badge>
+        <ion-badge class="connectionsStatus" *ngIf="(isConnected | async)" color="success">Connected</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-progress-bar color="success" [hidden]="!(isCamConnected | async)" type="indeterminate"></ion-progress-bar>
+<ion-content class="ion-padding" >
+  <ion-grid>
+    <ion-row>
+      <ion-col class="howtoWrapper" [hidden]="(isCamConnected | async)">
+        <ion-card class="howtoCard">
+          <ion-card-header class="cardHeader">How to Connect</ion-card-header>
+          <ion-card-content>
+            
+            <ion-grid>
+              <ion-row class="step1">
+                <ion-button color="success" id="step1">Login as Guest</ion-button>
+              </ion-row>
+
+              <ion-row class="step2">
+                <label for="step2">Enter Peer <span style="font-weight: bold;">ROOM ID</span></label>
+              </ion-row>
+              
+                <div style="text-align: center; margin-top: 15px; font-size: medium;">or</div>
+              
+
+              <ion-row class="step3">
+                  <ion-col>
+                    <div>Share <span style="font-weight: bold;">Room ID</span> to Peer</div>
+                  </ion-col>
+                  <ion-col class="step3CopyIcon">
+                    <ion-icon name="copy-outline"></ion-icon>
+                  </ion-col>
+              </ion-row>
+
+            </ion-grid>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col id="session_container">
+        <app-user-container></app-user-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

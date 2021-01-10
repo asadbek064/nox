@@ -1,0 +1,73 @@
+.top-video{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    max-width: 100px;
+    z-index: 2;
+}
+
+.main-video{
+    width: 100%;
+    max-height: 70%;
+}
+
+.card_header {
+    text-align: center;
+}
+.joinButton {
+    display: block;
+    justify-content: center;
+}
+.copyButton, .roomButton {
+    display: block;
+    justify-content: center;
+}
+
+.roomButton { 
+    transition: 0.33s ease-in-out;
+}
+
+ion-row {
+    display: flex;
+    justify-content: center;
+}
+
+ion-card {
+    width: 300px ;
+    display: flex;
+    flex-direction: column;
+    margin: 10px !important;
+}
+
+ion-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.roomID{
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 5px;
+}
+
+.roomJoin  {
+    font-size: x-large;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* video  ui */
+.videoContainer {
+    #my-video, #partner-video {
+        width: auto;
+        border-radius: 22px;
+        overflow: hidden;
+        -webkit-transform: translateZ(0);
+        box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
+    }
+
+    .videoWrapper {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+}

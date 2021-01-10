@@ -1,0 +1,49 @@
+#session_container {
+    display: flex;
+    justify-content: center;
+}
+
+.connectionStatus { 
+    margin-right: 25px;
+}
+
+.howtoWrapper {
+
+    .cardHeader {
+        text-align: center;
+        font-size: medium;
+    }
+    position: absolute;
+    .howtoCard {
+        background-color: rgba(236, 234, 234, 0.651);
+        width: 20vw;
+    }
+
+    .steps {
+        margin: 15px;
+    }
+
+    ion-icon {
+        font-size: x-large;
+
+    }
+
+    ion-row {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .step1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #step1 {
+        opacity: 65%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .howtoWrapper {
+        display: none;
+    }
+}
