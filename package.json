@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-server": "node ./bin/www"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,14 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "angular-cli-ghpages": "^1.0.0-rc.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "https": "^1.0.0",
+    "morgan": "~1.9.1",
     "peerjs": "^1.3.1",
     "rxjs": "~6.5.5",
     "shortid32": "^0.1.1",
@@ -60,5 +69,9 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project uses webRTC and e2e encryption to create safe videochat platform that runs on the web",
+  "engines": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
+  }
 }
