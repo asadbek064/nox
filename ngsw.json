@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1610379688572,
+  "timestamp": 1610380458411,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -144,6 +144,7 @@
       },
       "urls": [
         "/assets/icon/favicon.png",
+        "/assets/icons/icon-144x144.png",
         "/assets/shapes.svg"
       ],
       "patterns": []
@@ -255,7 +256,8 @@
     "/59-es5.904bd420377bdf9329aa.js": "5acd6cff25d81625c624ee7d0a5a5bbf1ca7e4ad",
     "/60-es2015.68bc8ede1f90da11ec06.js": "ab5e1c2dd830a221eecc0ca181af869fa6c029b5",
     "/60-es5.68bc8ede1f90da11ec06.js": "0b900727bb1d9fb0dbd849843bc25c822a3ac2fd",
-    "/assets/icon/favicon.png": "d284b485d8cfa9ae5d3e794c20cfd25586c8a16e",
+    "/assets/icon/favicon.png": "019b51debbb05aa3879f4bae23c3a50cc9e12c41",
+    "/assets/icons/icon-144x144.png": "67a94b3050998261112280abc2fe69720921c74b",
     "/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/common-es2015.32207e7603ff9baca653.js": "2f2a9e1c4ba95727ec22da6ac5f2c8b6e68ccffb",
     "/common-es5.32207e7603ff9baca653.js": "4f3ec71898590d4259328964232458978f73b5b2",
