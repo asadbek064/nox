@@ -9,7 +9,7 @@ app.use(compression());
 
 app.use(cors());
 
-app.use(express.static('/www/*'));
+app.use(express.static(__dirname +'/www/*'));
 
 app.all('*', function (req, res) {
   res.status(200).sendFile(__dirname + '/www/index.html');
