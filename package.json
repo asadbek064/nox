@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start-server": "node ./bin/www"
+    "start-server": "node app.js"
   },
   "private": true,
   "dependencies": {
