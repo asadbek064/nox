@@ -9,10 +9,10 @@ app.use(compression());
 
 app.use(cors());
 
-app.use(express.static(__dirname +'/www/*'));
+app.use(express.static(path.join(__dirname +'/www/*')));
 
 app.all('*', function (req, res) {
-  res.status(200).sendFile(__dirname + '/www/index.html');
+  res.status(200).sendFile(path.join(__dirname + '/www/index.html'));
 });
 
 app.listen(process.env.PORT || 4200, function(){
