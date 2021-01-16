@@ -1,6 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Nox</ion-title>
+    <div class="icon">
+      <img id="noxIcon" src="../../../assets/vector/logo_md.svg" alt="nox-logo" [routerLink]="[ '/home' ]" routerLinkActive="active">
+      <ion-title class="title">NOX</ion-title>
+    </div>
+    <ion-buttons  slot="end">
+      <ion-button class="home"
+        [routerLink]="[ '/home' ]" routerLinkActive="active"
+        >
+        Home
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

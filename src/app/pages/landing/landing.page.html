@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="icon">
+      <img id="noxIcon" src="../../../assets/vector/logo_md.svg" alt="nox-logo">
+      <ion-title class="title">NOX</ion-title>
+    </div>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bannerBlob">
+    <div class="bannerContent">
+      <div class="bannerHeader"></div>
+    </div>
+    <img  id="bannerBlob" src="../../../assets/vector/blob_header.svg" alt="banner-blob">
+  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <div class="header">FREE ANYONOMUS VIDEO CALLS</div>
+    </ion-row>
+    
+    <ion-row class="vectorContainer">
+      <div class="vectorImg">
+        <img id="vectorImgLock" src="../../../assets/vector/guy_girl_lock.svg" alt="secor-connection-vector-img">
+      </div>
+    </ion-row>
+
+    <ion-row class="slogan" size-xs="12" >
+      <div id="slogan">Speak Freely</div>
+      <div id="slogan">No ads. No trackers.</div>
+      <div id="actionBtn">
+          <div class="btnHeader">No Signup or Login</div>
+          <ion-button 
+            color="secondary" 
+            id="openAppBtn"
+            [routerLink]="[ '/app' ]" routerLinkActive="active"
+          >Launch App</ion-button>
+      </div>
+    </ion-row>
+    
+    <ion-row class="featuresDes">
+      <ion-col 
+        size-xs="12"
+        size-sm="6"
+        size-md="5"
+        size-lg="4"
+        size-xl="4"
+       >
+        <div class="blockText">
+          <div class="blockTextHeader">NOX VOICE AND VIDEO CALLS</div>
+          <div class="blockTextSummary">With voice calls, you can talk to anyone for free, even if they're in another country.</div>
+        </div>
+      </ion-col>
+      <ion-col 
+        size-xs="12"
+        size-sm="6"
+        size-md="5"
+        size-lg="4"
+        size-xl="4"
+       >
+        <div class="blockText">
+          <div class="blockTextHeader">P2P COMMUNICATION</div>
+          <div class="blockTextSummary">Peer-to-Peer service delivers continouse media streams directly between peer nodes.</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <div id="cc">Asadbek Karimov © 2021 Nox</div>
+  </ion-toolbar>
+</ion-footer>

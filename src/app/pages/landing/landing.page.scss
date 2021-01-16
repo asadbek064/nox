@@ -1,0 +1,139 @@
+
+ion-grid {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.icon {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    #noxIcon {
+        height: 45px;
+    }
+    
+    #noxIcon:hover{
+        cursor: pointer;
+    }
+} 
+.header {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 3px;
+    border-radius: 2.5px;
+}
+.vectorImg {
+    margin-top: 5rem;
+
+    #vectorImgLock {
+        width: 30rem;
+    }
+}
+
+.bannerBlob {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+
+    #bannerBlob {
+        float: right;
+        width: 50vw;
+    }
+
+    .bannerHeader {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: bold;
+        line-height: 2;
+       letter-spacing: 2.5px;
+    }
+    .bannerContent{
+        position: absolute;
+        top: 5rem;
+        right: 10%;
+        z-index: 2;
+    }
+    #openAppBtn {
+        width: 100%;
+    }
+
+
+}
+
+.vectorContainer {
+   width: 70%;
+}
+.featuresDes  {
+    margin-top: 4rem;
+    
+}
+
+
+.blockText {
+    max-width: 30rem;
+    line-height: 1.8rem;
+    .blockTextHeader {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    .blockTextSummary {
+        font-weight: 300;
+    }
+}
+
+.slogan {
+    margin-top: 0.5rem ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    #slogan {
+        margin: 2px;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    .btnHeader  {
+        font-size: 1.3rem;
+        line-height: 2;
+    }
+    #actionBtn  {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+.home{
+    font-size: small;
+}
+
+ion-footer {
+    #cc {
+        font-size: xx-small;
+        text-align: center;
+    }
+ }
+@media only screen and (max-width: 700px) {
+  .featuresDes > ion-col {
+    margin-top: 2rem;
+  }
+
+  .featuresDes  {
+    margin-top: 1rem;
+}
+  .header {
+      padding: 10px;
+      border-radius: 5px;
+  }
+
+    .bannerBlob {
+      display: none;
+  }
+  .slogan {
+    text-align: center;
+  }
+}
