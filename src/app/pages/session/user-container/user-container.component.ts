@@ -8,7 +8,6 @@ import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
 
 const { Clipboard } = Plugins;
 shortid.characters('23456789ABCDEFGHJKLMNPQRSTUVWXYZ'); // override defaults
-
 @Component({
   selector: 'app-user-container',
   templateUrl: './user-container.component.html',
@@ -23,13 +22,16 @@ export class UserContainerComponent implements OnInit {
   
   userCamStatus: BehaviorSubject<boolean> = new BehaviorSubject(false);
   connectedStatus: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  login: boolean;
-
-  roomStatus = 'OFF';
-  roomButtonColor = "success";
-  roomButtonText = "Login Guest";
 
   VIDEO_AUDIO_CONSTRAINTS = { video: true, audio: true};
+  
+  /* STEPPER STATE */
+  isJoinRoom: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isCreateRoom: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+  /* VIDEO CONTROL BUTTONS */
+  HIDE_CAMERA: string;
+  MUTE_AUDIO: string;
 
   constructor(
     private webRTCservice : WebRTCService,     
@@ -38,17 +40,14 @@ export class UserContainerComponent implements OnInit {
     private statusService: StatusService,
     ) {
       this.initUserId();
-      this.login = false;
+      this.HIDE_CAMERA = "success";
+      this.MUTE_AUDIO = "success";
       this.statusService.camStream_Change.subscribe(
         newState => {
-          console.log('cam: ', newState);
           if (newState) {
             this.snackbar('Turning on Camera','top');
             this.userCamStatus.next(newState);
 
-            this.roomStatus = 'ON';
-            this.roomButtonColor = "primary";
-            this.roomButtonText = "Room is Open";
           } else {
             this.userCamStatus.next(newState);
           }
@@ -58,14 +57,13 @@ export class UserContainerComponent implements OnInit {
       this.statusService.connected_Change.subscribe(
         newState => {
           if(newState) {
-            console.log('connected: ', newState);
             this.snackbar(`Joined Room: ${this.partnerId}`, 'top');
             this.connectedStatus.next(newState);
           } else {
             this.connectedStatus.next(newState);
           }
         }
-      )
+      );
 
      }
 
@@ -105,7 +103,6 @@ export class UserContainerComponent implements OnInit {
   ngOnInit() {}
   
   initUserId() {
-    this.login = true;
     let userId = localStorage.getItem('USER_ID');
     
     if (userId) {
@@ -125,4 +122,35 @@ export class UserContainerComponent implements OnInit {
     this.snackbar('copy to clipboard', 'bottom');
   }
 
+  /* Stream Controls */
+  endCall() {
+    this.webRTCservice.endCall();
+  }
+
+  sharingCam() {
+    this.webRTCservice.sharingCam();
+    this.HIDE_CAMERA = (this.HIDE_CAMERA == 'success')?'medium':'success';
+
+  }
+
+  sharingAudio() {
+    this.webRTCservice.sharingAudio();
+    this.MUTE_AUDIO = (this.MUTE_AUDIO == 'success')?'medium':'success';
+  } 
+
+  /* stepper status */
+  async changeIsJoinRoom(status: boolean) {
+    this.isJoinRoom.next(status);
+    await this.timeout(10);
+    this.init();
+  }
+  async changeIsCreateRoom(status: boolean) {
+    this.isCreateRoom.next(status);
+    await this.timeout(10);
+    this.init()
+  }
+
+  timeout(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 }

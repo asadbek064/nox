@@ -27,6 +27,21 @@
     transition: 0.33s ease-in-out;
 }
 
+.videoControlsContainer {
+    display: flex;
+    justify-content: center;
+    .videoControls {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    ion-button {
+        margin: 10px;
+        justify-content: space-between;
+    }
+}
+
 ion-row {
     display: flex;
     justify-content: center;
@@ -44,6 +59,20 @@ ion-button {
     margin-bottom: 10px;
 }
 
+.header {
+    font-size: xx-large;
+    text-align: center;
+    font-weight: 200;
+    line-height: 1.6;
+}
+.initalCard {
+    min-width: 400px;
+    text-align: center;
+    ion-button {
+        font-size: large;
+    }
+}
+
 .roomID{
     font-weight: bold;
     font-size: xx-large;
@@ -59,15 +88,41 @@ ion-button {
 .videoContainer {
     #my-video, #partner-video {
         width: auto;
-        border-radius: 22px;
+        height: auto;
+        border-radius: 10px;
         overflow: hidden;
         -webkit-transform: translateZ(0);
         box-shadow: 0 19px 51px 0 rgba(0,0,0,0.16), 0 14px 19px 0 rgba(0,0,0,0.07);
     }
-
     .videoWrapper {
         margin-top: 20px;
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
+}
+
+/* all mobile queries */
+@media only screen and (max-width: 600px) {
+    .initalCard {
+        min-width: 320px;
+
+        ion-button {
+            font-size: medium;
+        }
+    }
+    .header {
+        font-size: larger;
+    }
+
+    .videoControls > ion-button { 
+        font-size: small;
+    }
+
+    #partner-video {
+        position: absolute;
+        right: 30px;
+    } 
+    
+
 }

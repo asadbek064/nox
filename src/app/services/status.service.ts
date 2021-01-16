@@ -10,7 +10,9 @@ export class StatusService {
 
     connected: boolean;
     connected_Change: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
+    callEnd: boolean;
+    callEnd_Change: BehaviorSubject<boolean> = new BehaviorSubject(false);
+    
     constructor() {
         this.camStream_Change.subscribe(
             newState => {
@@ -22,9 +24,15 @@ export class StatusService {
             newState => {
                 this.connected = newState;
                 if (newState) {
-                    console.log("connection: ", newState);
+                        
                 }
             }
-        )
+        );
+
+        this.callEnd_Change.subscribe(
+            newState => {
+                this.callEnd = newState;
+            }
+        );
     }
 }

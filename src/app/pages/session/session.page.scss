@@ -8,37 +8,36 @@
 }
 
 .howtoWrapper {
-
+    position: relative;
+    ion-button {
+        font-size: x-small;
+        width: 110px!important;
+        height: 25px!important;
+    }
     .cardHeader {
         text-align: center;
-        font-size: medium;
+        font-size: small;
     }
-    position: absolute;
     .howtoCard {
+        position: absolute;
+        top: 60%;
         background-color: rgba(236, 234, 234, 0.651);
         width: 20vw;
     }
 
-    .steps {
-        margin: 15px;
-    }
-
-    ion-icon {
-        font-size: x-large;
-
-    }
-
-    ion-row {
-        margin-top: 10px;
-        margin-bottom: 15px;
-    }
-    .step1 {
+    .howtoContent {
         display: flex;
-        justify-content: center;
+        justify-content: start;
+        flex-direction: column;
     }
 
-    #step1 {
-        opacity: 65%;
+    .howtoContent > div {
+        margin: 10px;
+    }
+
+    .howtoItem {
+        display: flex;
+        flex-direction: row;
     }
 }
 

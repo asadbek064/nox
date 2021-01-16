@@ -1,6 +1,28 @@
 
 <ion-grid class="container">
-  <ion-row *ngIf="(connectedStatus | async) === false" nowrap>
+  
+  <!-- Stepper Inital Start -->
+  <ion-grid *ngIf="!(isJoinRoom | async) && !(isCreateRoom | async)" nowrap>
+    <ion-row>
+      <div class="header">Welcom To Nox, Enjoy Free Private Video Calls </div>
+    </ion-row>
+    <ion-row>
+        <ion-card class="initalCard">
+          <ion-card-content>
+              <ion-button color="success" (click)="changeIsJoinRoom(true)">
+                <ion-icon name="videocam-outline"></ion-icon>&nbsp;
+                Join Room</ion-button>
+              <ion-button color="secondary" (click)="changeIsCreateRoom(true)">
+                <ion-icon name="add-outline"></ion-icon>&nbsp;
+                Create Room</ion-button>
+          </ion-card-content>
+        </ion-card>
+    </ion-row>
+  </ion-grid>
+  <!-- Stepper Inital End -->
+
+  <!-- Join Room Container Start -->
+  <ion-row *ngIf="(connectedStatus | async) === false && (isJoinRoom | async)" nowrap>
       <ion-card>
         <ion-card-header class="card_header">Join Room</ion-card-header>
         <ion-card-content>
@@ -14,34 +36,48 @@
         </ion-card-content>
       </ion-card>
   </ion-row>
+  <!-- Join Room Container End -->
 
-    <ion-row *ngIf="(connectedStatus | async) === false" nowrap>
-      <ion-card>
-        <ion-card-header class="card_header">Your Private Room {{ roomStatus }}</ion-card-header>
-        <ion-card-content>
-          <label>Share this ROOM ID with your peer</label>  
-          <ion-item>
-            <div class="roomID">{{userId}}</div>
-            </ion-item>
-            <ion-button class="copyButton" color="medium" (click)="copyText(userId)">
-              <ion-icon name="copy-outline"></ion-icon>
-              &nbsp; Copy
-            </ion-button>
-            <ion-button class="roomButton"  [color]="roomButtonColor" (click)="init()">{{ roomButtonText }}</ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-row>
+  <!-- Create Room Container Start -->
+  <ion-row *ngIf="(connectedStatus | async) === false && ((isCreateRoom | async))" nowrap>
+    <ion-card>
+      <ion-card-header class="card_header">Your Private Room</ion-card-header>
+      <ion-card-content>
+        <label>Share this ROOM ID with your peer</label>  
+        <ion-item>
+          <div class="roomID">{{userId}}</div>
+          </ion-item>
+          <ion-button class="copyButton" color="medium" (click)="copyText(userId)">
+            <ion-icon name="copy-outline"></ion-icon>
+            &nbsp; Copy
+          </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+  <!-- Create Room Container End -->
 
-    <ion-row class="videoContainer" nowrap>
-      <div id="errorMsg"></div>
-      <ion-col class="videoWrapper">
-        <video id="my-video" (click)="swapVideo('partner-video')" autoplay playsinline
-        [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}" >
+  <!-- Video Container Start -->
+  <ion-row class="videoContainer"  *ngIf="((isJoinRoom | async)) || ((isCreateRoom | async))" nowrap>
+    <div id="errorMsg"></div>
+    <ion-col class="videoWrapper" id="videoWrapper">
+      <video id="my-video" (click)="swapVideo('partner-video')" autoplay playsinline
+      [ngClass]="{'top-video': topVideoFrame === 'my-video', 'main-video': topVideoFrame != 'my-video'}" >
       </video>
       <video id="partner-video"  (click)="swapVideo('my-video')" autoplay playsinline
       [ngClass]="{'top-video': topVideoFrame === 'partner-video', 'main-video': topVideoFrame != 'partner-video'}">
       </video>
-      </ion-col>
-    </ion-row>
-  
+      <div class="videoControlsContainer" *ngIf="((isJoinRoom | async)) || ((isCreateRoom | async))">
+        <div class="videoControls">
+            <ion-button color="danger" (click)="endCall()">End Call</ion-button>
+            <ion-button color="{{HIDE_CAMERA}}" (click)="sharingCam()">Hide Camera</ion-button>
+            <ion-button color="{{MUTE_AUDIO}}" (click)="sharingAudio()">Mute Audio</ion-button>
+        </div>
+      </div>
+    </ion-col>
+   
+  </ion-row>
+
+
+  <!-- Video Container End -->
+
 </ion-grid>
