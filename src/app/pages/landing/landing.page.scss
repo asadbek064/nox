@@ -90,7 +90,12 @@ ion-grid {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
+    
+    ion-button {
+        margin: 1rem;
+        font-weight: bold;
+        font-size: x-large;
+    }
     #slogan {
         margin: 2px;
         font-size: 1.6rem;
@@ -102,9 +107,9 @@ ion-grid {
         line-height: 2;
     }
     #actionBtn  {
-        margin-top: 1rem;
         text-align: center;
     }
+    
 }
 
 .home{
