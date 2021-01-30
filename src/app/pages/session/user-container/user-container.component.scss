@@ -102,6 +102,10 @@ ion-button {
     }
 }
 
+.initalCard {
+    margin: 5rem;
+}
+
 /* all mobile queries */
 @media only screen and (max-width: 600px) {
     .initalCard {
@@ -112,7 +116,7 @@ ion-button {
         }
     }
     .header {
-        font-size: larger;
+        font-size: medium;
     }
 
     .videoControls > ion-button { 

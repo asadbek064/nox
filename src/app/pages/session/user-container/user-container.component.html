@@ -4,10 +4,10 @@
   <!-- Stepper Inital Start -->
   <ion-grid *ngIf="!(isJoinRoom | async) && !(isCreateRoom | async)" nowrap>
     <ion-row>
-      <div class="header">Welcom To Nox, Enjoy Free Private Video Calls </div>
+      <div class="header">Nox, Enjoy <span style="font-weight: 500;">Encrypted Private</span> Video Calls </div>
     </ion-row>
-    <ion-row>
-        <ion-card class="initalCard">
+    <ion-row class="initalCard">
+        <ion-card>
           <ion-card-content>
               <ion-button color="success" (click)="changeIsJoinRoom(true)">
                 <ion-icon name="videocam-outline"></ion-icon>&nbsp;

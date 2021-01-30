@@ -22,38 +22,35 @@
     margin-right: 25px;
 }
 
-.howtoWrapper {
-    position: relative;
-    ion-button {
-        font-size: x-small;
-        width: 110px!important;
-        height: 25px!important;
-    }
-    .cardHeader {
-        text-align: center;
-        font-size: small;
-    }
-    .howtoCard {
-        position: absolute;
-        top: 60%;
-        background-color: rgba(236, 234, 234, 0.651);
-        width: 20vw;
-    }
+.cardHeader {
+    text-align: center;
+    font-size: small;
+}
+.howtoCard {
+    width: 50%;
+    margin: 0 auto;
+    width: 300px;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 4px 16px 0 rgba(209, 206, 206, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    opacity: 60%;
+}
 
-    .howtoContent {
-        display: flex;
-        justify-content: start;
-        flex-direction: column;
-    }
+.howtoContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    .howtoContent > div {
-        margin: 10px;
-    }
+.howtoContent > div {
+    margin: 10px;
+}
 
-    .howtoItem {
-        display: flex;
-        flex-direction: row;
-    }
+.howtoItem {
+    display: flex;
+    flex-direction: row;
 }
 
 .home{

@@ -4,13 +4,6 @@
       <img id="noxIcon" src="../../../assets/vector/logo_md.svg" alt="nox-logo" [routerLink]="[ '/home' ]" routerLinkActive="active">
       <ion-title class="title">NOX</ion-title>
     </div>
-    <ion-buttons  slot="end">
-      <ion-button class="home"
-        [routerLink]="[ '/home' ]" routerLinkActive="active"
-        >
-        Home
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -18,13 +11,16 @@
 <ion-content class="ion-padding" >
   <ion-grid>
     <ion-row>
-      <ion-col class="howtoWrapper" [hidden]="(isCamConnected | async)" size="2">
-        <ion-card class="howtoCard" >
+      <ion-col size="12" id="session_container" >
+        <app-user-container  size-xs="12"></app-user-container>
+      </ion-col>
+      <ion-col size="12" class="howtoWrapper" >
+        <ion-card  [hidden]="(isCamConnected | async)"  class="howtoCard" >
           <ion-card-header class="cardHeader">How to Use</ion-card-header>
           <ion-card-content>
             <div class="howtoContent">
               <div class="howtoItem">
-                <span>1&nbsp;&nbsp;&nbsp;</span><div >Join a Room <span style="font-weight: bold;">ROOM ID</span> or</div>
+                <span>1&nbsp;&nbsp;&nbsp;</span><div >Join a Room with <span style="font-weight: bold;">ROOM ID</span> or</div>
               </div>
               <div class="howtoItem">
                 <span>2&nbsp;&nbsp;&nbsp;</span>
@@ -38,9 +34,7 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col id="session_container" >
-        <app-user-container   size-xs="12"></app-user-container>
-      </ion-col>
     </ion-row>
+
   </ion-grid>
 </ion-content>
